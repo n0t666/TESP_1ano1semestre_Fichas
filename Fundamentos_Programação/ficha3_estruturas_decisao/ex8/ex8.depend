@@ -1,4 +1,5 @@
 # depslib dependency file v1.0
-1697705432 source:c:\users\2231675\documents\fundamentos_prog\ficha3_estruturas_decisao\ex8\main.c
+1698055907 source:c:\users\2231675\documents\projetosc\ficha3_estruturas_decisao\ex8\main.c
+	<stdio.h>
 	<locale.h>
 
