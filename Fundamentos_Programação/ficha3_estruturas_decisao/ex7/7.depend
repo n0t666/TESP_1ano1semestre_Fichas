@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1697705337 source:c:\users\2231675\documents\fundamentos_prog\ficha3_estruturas_decisao\7\main.c
+	<stdio.h>
+	<ctype.h>
+	<stdlib.h>
+	<locale.h>
+
+1698304381 source:c:\users\2231675\documents\fundamentos_prog\ficha3_estruturas_decisao\ex7\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+
