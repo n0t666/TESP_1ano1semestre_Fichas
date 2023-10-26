@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1698305046 source:c:\users\2231675\documents\fundamentos_prog\ficha3_estruturas_decisao\ex6.1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+
