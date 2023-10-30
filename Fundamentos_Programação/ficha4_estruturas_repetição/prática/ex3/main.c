@@ -1,7 +1,8 @@
 #include <stdio.h>
-#include <locale.h>
-int main()
+
+void main(void)
 {
+
     int total_saltos = 0;
     float salto = 0,maior_salto = 0,menor_salto=0,soma_saltos = 0,media = 0;
 
