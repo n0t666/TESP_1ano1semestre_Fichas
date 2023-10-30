@@ -1,7 +1,10 @@
 #include <stdio.h>
+#include <locale.h>
 
 int main()
 {
+    setlocale(LC_ALL, "Portuguese");
+
     int num;
 
     printf("Introduza um numero inteiro: ");
