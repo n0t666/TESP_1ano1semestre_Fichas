@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1698918459 source:c:\users\2231675\documents\github\tesp_1ano_fichas\fundamentos_programação\ficha4_estruturas_repetição\teórica\ex7\main.c
+	<time.h>
+	<stdlib.h>
+	<locale.h>
+

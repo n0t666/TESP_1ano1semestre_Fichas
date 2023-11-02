@@ -4,12 +4,12 @@ void main(void)
 {
 
     int total_saltos = 0;
-    float salto = 0,maior_salto = 0,menor_salto=0,soma_saltos = 0,media = 0;
+    float salto,maior_salto = 0,menor_salto=0,soma_saltos = 0,media = 0;
 
 
     printf("Introduza o comprimento do salto (0 para terminar): ");
 
-    while (scanf("%f", &salto) == 1 && salto != 0.0)
+    while (salto != 0.0 || salto !=0)
     {
         if (salto > 0.0)
         {
@@ -33,6 +33,7 @@ void main(void)
             }
         }
         printf("Introduza o comprimento do salto (0 para terminar): ");
+        scanf("%f", &salto);
     }
 
     if (total_saltos > 0)

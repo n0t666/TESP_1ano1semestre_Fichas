@@ -1,22 +1,31 @@
 #include <stdio.h>
 
-int main() {
-    int m = 0, n = 0;
-    float somatorio = 0;
-
-    printf("Introduza o valor do limite inferior: ");
-    scanf("%d", &m);
-    printf("\nIntroduza o valor do limite superior: ");
-    scanf("%d", &n);
-
-    if (n>m) {
-        for (int i = m; i <= n; i++) {
-            somatorio = (2.0 * i) / (5.0 + (i * i));
+int main()
+{
+    int limite_inferior,limite_superior;
+    float numerador,denominador,somatorio = 0;
+    do
+    {
+        printf("Introduza o valor do limite inferior: ");
+        scanf("%d", &limite_inferior);
+        printf("\nIntroduza o valor do limite superior: ");
+        scanf("%d", &limite_superior);
+        if(limite_inferior>limite_superior)
+        {
+            printf("O limite inferior não pode ser maior que o limite superior\n");
         }
-
-
-        printf("%f", somatorio);
     }
+    while(limite_inferior > limite_superior);
+
+    for(somatorio=0; limite_inferior<=limite_superior; limite_inferior++)
+    {
+        numerador = 2.0 * limite_inferior;
+        denominador = 5 + limite_inferior * limite_inferior;
+        somatorio = somatorio + numerador / denominador;
+    }
+    printf("\nResultado = %f",somatorio);
+
+
 
     return 0;
 }
