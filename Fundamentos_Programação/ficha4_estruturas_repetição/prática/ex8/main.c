@@ -4,9 +4,12 @@
 
 int main()
 {
-    char opcao,sair;
 
     setlocale(LC_ALL, "Portuguese");
+
+    char opcao,sair;
+
+
     do
     {
         printf("************************ Menu Principal ******************************\n");
