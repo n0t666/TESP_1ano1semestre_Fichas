@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1699870529 source:c:\users\2231675\documents\github\tesp_1ano_fichas\fundamentos_programação\ficha5\ex7\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+

@@ -6,21 +6,23 @@
 #define PRECO_GASOLEO 1.80
 #define PRECO_GPL 0.93
 
-int obter_preco_combustivel(int);
-
+float obter_preco_combustivel(int);
 float obter_kms();
-float calcular_montante(int);
+float calcular_montante(int,float);
 float calcular_consumo_medio(float,float);
+float calcular_litros(float,float);
 
 char menu();
 
 int main()
 {
+    setlocale(LC_ALL, "Portuguese");
+
     char opcao;
 
     float kms;
 
-    setlocale(LC_ALL, "Portuguese");
+
     do
     {
         opcao=menu();
@@ -59,11 +61,33 @@ float obter_kms()
     scanf("%f",&kms);
 
     fflush(stdin);
-
+    printf("\nPressione enter para continuar...");
     getchar();
 
     return kms;
 }
 
-float obter_preco_combustivel(){
+float obter_preco_combustivel(int tipo)
+{
+    float preco;
+
+    switch(tipo){
+        case 1: preco=PRECO_GASOLINA;break;
+        case 2: preco=PRECO_GASOLEO;break;
+        case 3: preco=PRECO_GPL;break;
+        default: preco = 0;
+    }
+
+    return preco;
+
+}
+
+float calcular_montante(float preco,float kms)
+{
+    return preco * kms;
+}
+
+float calcular_consumo_medio(float litros,float distancia)
+{
+    return (litros * 100) / (distancia);
 }
