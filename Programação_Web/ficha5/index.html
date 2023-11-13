@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ficha 5</title>
+    <link
+      rel="stylesheet"
+      href="assets/bootstrap-5.3.2-dist/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Formulário</h1>
+      <form method="POST" action="#" id="contact-form">
+        <div class="mb-3">
+          <label for="nameInput" class="form-label">Nome</label>
+          <input type="text" class="form-control" id="nameInput" />
+        </div>
+
+        <div class="mb-3">
+          <label for="emailInput" class="form-label">Email</label>
+          <input type="email" class="form-control" id="emailInput" />
+        </div>
+
+        <div class="mb-3">
+          <label for="message" class="form-label">Messagem</label>
+          <textarea id="message" class="form-control" rows="3"></textarea>
+        </div>
+
+        <div class="mb-3">
+          <label for="birthYear" class="form-label">Ano de Nascimento</label>
+          <select
+            class="form-select"
+            id="birthYear"
+            aria-label="Ano de Nascimento"
+          ></select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label"> Género </label>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="gender"
+              id="male"
+            />
+            <label class="form-check-label" for="male"> Masculino </label>
+          </div>
+
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="gender"
+              id="female"
+            />
+            <label class="form-check-label" for="female"> Feminino </label>
+          </div>
+
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="gender"
+              id="other"
+            />
+            <label class="form-check-label" for="other"> Outro </label>
+          </div>
+        </div>
+
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="terms" />
+          <label class="form-check-label" for="terms">Termos e condições</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+    </div>
+    <script src="assets/bootstrap-5.3.2-dist/js/bootstrap.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
