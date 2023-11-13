@@ -12,12 +12,11 @@ void main(void)
 {
     setlocale(LC_ALL, "Portuguese");
 
-    int invalido,sair;
+    int invalido,sair=1;
     char opcao_menu_principal;
 
     do
     {
-        sair =1;
         opcao_menu_principal=menu_principal();
 
         switch(opcao_menu_principal)
@@ -29,7 +28,7 @@ void main(void)
         case 'C':
             break;
         case'F':
-            sair=confirma_saida();
+                sair=confirma_saida();
             break;
         default:
             invalido = 1;
@@ -37,7 +36,6 @@ void main(void)
         }
     }
     while(invalido || sair !=1 );
-
 
     return;
 
@@ -52,6 +50,23 @@ char menu_principal()
     printf("A - Opção A\n");
     printf("B - Opção B\n");
     printf("C - Opção C\n");
+    printf("F - Fim\n\n");
+    printf("Opção --> ");
+    scanf(" %c",&opcao_selecionada);
+    opcao_selecionada = toupper(opcao_selecionada);
+    return opcao_selecionada;
+}
+
+int menu_opcaoA()
+{
+    int opcao_selecionada;
+
+
+    printf("************************ Menu Opção A ******************************\n");
+    printf("1 - Opção A.1\n");
+    printf("2 – Opção A.2\n");
+    printf("3 – Opção A.3\n");
+
     printf("F - Fim\n\n");
     printf("Opção --> ");
     scanf(" %c",&opcao_selecionada);
