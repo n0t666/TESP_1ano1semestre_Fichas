@@ -4,45 +4,44 @@
 #include <locale.h>
 
 
-char menu_principal();
-int confirma_saida();
-int menu_opcaoA();
+char menu_principal(void);
+int confirma_saida(void);
+int menu_opcaoA(void);
 
-void main(void)
+ int main()
 {
     setlocale(LC_ALL, "Portuguese");
 
-    int invalido,sair=1;
+    int invalido,sair,opcao_menuA=1;
     char opcao_menu_principal;
 
     do
     {
         opcao_menu_principal=menu_principal();
-
         switch(opcao_menu_principal)
         {
         case 'A':
+            opcao_menuA=menu_opcaoA();
             break;
         case 'B':
             break;
         case 'C':
             break;
         case'F':
-                sair=confirma_saida();
+            sair=confirma_saida();
             break;
         default:
             invalido = 1;
             printf("Opção inválida");
         }
-    }
-    while(invalido || sair !=1 );
-
+    }while(invalido || sair !=1 || opcao_menuA == 0 );
     return;
 
 }
 
 char menu_principal()
 {
+
     char opcao_selecionada;
 
 
@@ -59,6 +58,8 @@ char menu_principal()
 
 int menu_opcaoA()
 {
+    system("cls");
+
     int opcao_selecionada;
 
 
@@ -66,11 +67,10 @@ int menu_opcaoA()
     printf("1 - Opção A.1\n");
     printf("2 – Opção A.2\n");
     printf("3 – Opção A.3\n");
-
-    printf("F - Fim\n\n");
+    printf("0 - Voltar ao menu anterior\n\n");
     printf("Opção --> ");
-    scanf(" %c",&opcao_selecionada);
-    opcao_selecionada = toupper(opcao_selecionada);
+    scanf("%d",&opcao_selecionada);
+
     return opcao_selecionada;
 }
 
@@ -78,7 +78,7 @@ int confirma_saida()
 {
     int opcao;
 
-    printf("\nDeseja realmente sair? [1 - Sair] [0 - Continuar] ");
+    printf("\nDeseja realmente sair? [1 - Sair] [0 - Continuar]: ");
     scanf("%d",&opcao);
 
     return opcao;
