@@ -8,20 +8,25 @@ char menu_principal(void);
 int confirma_saida(void);
 int menu_opcaoA(void);
 
- int main()
+int main()
 {
     setlocale(LC_ALL, "Portuguese");
 
-    int invalido,sair,opcao_menuA=1;
-    char opcao_menu_principal;
+    int invalido,sair,opcao_menuA;
+    char opcao_menu_principal,selected_menu;
 
     do
     {
+        system("cls");
+
+        opcao_menuA = 1;
         opcao_menu_principal=menu_principal();
+
+
         switch(opcao_menu_principal)
         {
         case 'A':
-            opcao_menuA=menu_opcaoA();
+            selected_menu = 'A';
             break;
         case 'B':
             break;
@@ -34,7 +39,17 @@ int menu_opcaoA(void);
             invalido = 1;
             printf("Opção inválida");
         }
-    }while(invalido || sair !=1 || opcao_menuA == 0 );
+
+
+
+
+
+
+
+
+
+    }
+    while(invalido || sair == 0 || opcao_menuA == 0);
     return;
 
 }
