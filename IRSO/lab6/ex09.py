@@ -10,6 +10,10 @@ try:
             print("Valor: ",r.text,"ºC")
             time.sleep(2)
             print("\n")
+        else:
+            print("Erro: Pedido não efetuado!!")
+            print("Status code",str(r.status_code))
+        time.sleep(2)
             
 
 except KeyboardInterrupt:
