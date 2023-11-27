@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1701085883 source:/home/leandro/Documentos/TESP_1ano_Fichas/Fundamentos_Programacao/ficha6/ex1/main.c
+	<stdio.h>
+	<locale.h>
+	<ctype.h>
+
