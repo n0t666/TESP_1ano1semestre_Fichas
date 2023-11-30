@@ -49,6 +49,7 @@ int main()
         case 3:
             media=calcular_media_notas(notas_estudantes,num_estudantes);
             printf("\nMédia dos %d estudantes = %2.f",num_estudantes,media);
+
             break;
         case 4:
             mostrar_notas_positivas(notas_estudantes,num_estudantes);
@@ -59,7 +60,7 @@ int main()
         case 6:
             nota_maior = calcular_nota_mais_alta(notas_estudantes,num_estudantes);
             nota_menor = calcular_nota_mais_baixa(notas_estudantes,num_estudantes);
-            printf("\nA nota mais baixa é de \" %d\" e a mais alta é de \" %d\" ",nota_menor,nota_maior);
+            printf("\nA nota mais baixa é de \"%d\" e a mais alta é de \"%d\" \n",nota_menor,nota_maior);
             break;
         case 0:
             sair=confirmar_saida();
@@ -131,10 +132,7 @@ int menu()
 char confirmar_saida()
 {
     char sair;
-    printf("\nDeseja realmente sair?[S]im [N]ão: ");
-    scanf(" %c",&sair);
 
-    return toupper(sair);
     printf("Confirma Saida (S/N): ");
     do
     {

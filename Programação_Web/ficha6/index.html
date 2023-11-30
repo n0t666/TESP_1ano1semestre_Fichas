@@ -11,20 +11,40 @@
   </head>
   <body>
     <div class="container mt-5 mb-5">
-      <h1>Lista filmes</h1>
-      <input type="text" class="form-control mb-1" name="movieName" id="movieName" aria-describedby="helpId" placeholder="Insira o nome do filme">
-      <button type="button" class="btn btn-primary mb-3" id="btnSearch">Pesquisar</button>
-      <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+      <h1 class="searchTitle">Lista filmes</h1>
+      <input
+        type="text"
+        class="form-control mb-1"
+        name="movieName"
+        id="movieName"
+        aria-describedby="helpId"
+        placeholder="Insira o nome do filme"
+      />
+      <button type="button" class="btn btn-primary mb-3" id="btnSearch">
+        Pesquisar
+      </button>
+      <div class="listaFilmes row">
+        <div class="card card-movie col-md-4 mt-2">
+          <img src="..." class="card-img-top img-movie object-fit-cover"  alt="..."/>
+          <div class="card-body">
+            <h5 class="card-title title-movie">Titulo</h5>
+            <p class="card-text year-movie">
+              Ano
+            </p>
+            <p class="card-text type-movie">
+              Tipo
+            </p>
+            <a href="" class="btn btn-primary imdb-movie" target="_blank">Ver IMDB</a>
+          </div>
         </div>
       </div>
     </div>
     <script src="assets/bootstrap-5.3.2-dist/js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
     <script src="./assets/js/script.js"></script>
   </body>
 </html>
