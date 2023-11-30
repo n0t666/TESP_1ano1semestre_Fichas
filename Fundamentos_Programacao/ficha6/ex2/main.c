@@ -8,9 +8,9 @@
 int menu_principal();
 int inicializar_quartos();
 void estado_quartos(int []);
-int conta_quartos_estado(int [],int);
-void ocupa_quarto(int []);
-int desocupa_quarto(int [],int);
+void conta_quartos_estado(int []);
+int ocupa_quarto(int []);
+int desocupa_quarto(int []);
 
 int main()
 {
@@ -38,9 +38,16 @@ int main()
             }
             break;
         case 'D':
+            estado_quartos(quartos);
+            n_quarto = desocupa_quarto(quartos);
+            if(n_quarto>0)
+            {
+                quartos[n_quarto-1]=0;
+            }
             break;
         case 'V':
             estado_quartos(quartos);
+            conta_quartos_estado(quartos);
             break;
         }
     }
@@ -54,7 +61,7 @@ int menu_principal()
     char op;
 
     printf("(O)cupar quarto");
-    printf("\n(D)cupar quarto");
+    printf("\n(D)escupar quarto");
     printf("\n(V)er estado dos quartos");
     printf("\n(S)air\n\n");
     printf("OPCAO ->");
@@ -122,9 +129,9 @@ int ocupa_quarto(int todos_quartos[])
 
 }
 
-int conta_quartos_estado(int todos_quartos[])
+void conta_quartos_estado(int todos_quartos[])
 {
-    int ocupados,livres;
+    int ocupados=0,livres=0;
     for (int indice = 0; indice < MAXIMO_QUARTOS; ++indice)
     {
         if(todos_quartos[indice]==1)
@@ -137,7 +144,42 @@ int conta_quartos_estado(int todos_quartos[])
         }
     }
 
-    printf("%d quartos ocupados");
-    printf("%d quartos livres");
+    printf("%d quartos ocupados\n",ocupados);
+    printf("%d quartos livres\n\n",livres);
+
+}
+
+int desocupa_quarto(int todos_quartos[])
+{
+    int quarto,reserva=0;
+
+    printf("Indique o nº do quarto que pretende desocupar: ");
+    scanf("%d",&quarto);
+
+    if(quarto>=1 && quarto<=MAXIMO_QUARTOS)
+    {
+        for (int indice = 0; indice < MAXIMO_QUARTOS; ++indice)
+        {
+            if(indice==quarto-1)
+            {
+                if(todos_quartos[indice]==1)
+                {
+                    reserva = quarto;
+                }
+                else if(todos_quartos[indice]==0)
+                {
+                    printf("\nO quarto já está desocupado\n\n");
+
+                }
+
+            }
+        }
+    }
+    else
+    {
+        printf("\nO quarto não existe\n");
+    }
+
+    return reserva;
 
 }
