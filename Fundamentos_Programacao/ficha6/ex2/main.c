@@ -98,7 +98,7 @@ int ocupa_quarto(int todos_quartos[])
 {
     int quarto,reserva=0;
 
-    printf("Indique o nÂº do quarto que pretende ocupar: ");
+    printf("Indique o nº do quarto que pretende ocupar: ");
     scanf("%d",&quarto);
 
     if(quarto>=1 && quarto<=MAXIMO_QUARTOS)
@@ -113,7 +113,7 @@ int ocupa_quarto(int todos_quartos[])
                 }
                 else if(todos_quartos[indice]==1)
                 {
-                    printf("\nO quarto jÃ¡ estÃ¡ ocupado\n\n");
+                    printf("\nO quarto já está ocupado\n\n");
 
                 }
 
@@ -122,7 +122,7 @@ int ocupa_quarto(int todos_quartos[])
     }
     else
     {
-        printf("\nO quarto nÃ£o existe\n");
+        printf("\nO quarto não existe\n");
     }
 
     return reserva;
@@ -153,7 +153,7 @@ int desocupa_quarto(int todos_quartos[])
 {
     int quarto,reserva=0;
 
-    printf("Indique o nÂº do quarto que pretende desocupar: ");
+    printf("Indique o nº do quarto que pretende desocupar: ");
     scanf("%d",&quarto);
 
     if(quarto>=1 && quarto<=MAXIMO_QUARTOS)
@@ -168,7 +168,7 @@ int desocupa_quarto(int todos_quartos[])
                 }
                 else if(todos_quartos[indice]==0)
                 {
-                    printf("\nO quarto jÃ¡ estÃ¡ desocupado\n\n");
+                    printf("\nO quarto já está desocupado\n\n");
 
                 }
 
@@ -177,7 +177,7 @@ int desocupa_quarto(int todos_quartos[])
     }
     else
     {
-        printf("\nO quarto nÃ£o existe\n");
+        printf("\nO quarto não existe\n");
     }
 
     return reserva;
