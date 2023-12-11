@@ -48,6 +48,10 @@ function isFavorite(id) {
 }
 
 function updateFavorite(btn, movie) {
+
+  if (btn.hasClass()){
+    
+  }
   btn.addClass("adicionado");
 
   btn.on("click", function () {
@@ -55,7 +59,7 @@ function updateFavorite(btn, movie) {
     if (favorites){
 
     }else{
-      
+
     }
   });
 }

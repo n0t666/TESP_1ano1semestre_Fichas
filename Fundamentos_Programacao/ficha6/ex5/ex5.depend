@@ -1,5 +1,7 @@
 # depslib dependency file v1.0
-1701690474 source:/home/leandro/Documentos/TESP_1ano_Fichas/Fundamentos_Programacao/ficha6/ex5/main.c
+1702290042 source:/home/leandro/Documentos/TESP_1ano_Fichas/Fundamentos_Programacao/ficha6/ex5/main.c
 	<stdio.h>
 	<stdlib.h>
+	<ctype.h>
+	<string.h>
 
