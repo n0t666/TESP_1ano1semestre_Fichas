@@ -1,0 +1,28 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Dec 12 11:05:06 2023
+
+@author: leandro
+"""
+
+#Pede ao utilizador os 3 lados
+ladoA = float(input('Introduza o lado A: '))
+ladoB = float(input('Introduza o lado B: '))
+ladoC = float(input('Introduza o ladoC: '))
+
+if ladoA  == ladoB == ladoC:
+    texto = 'Estamos perante um cubo'
+else:
+    texto = 'Não estamos perante um cubo'
+    
+volume = ladoA * ladoB * ladoC
+areaDaBase1 = ladoA * ladoB
+TotalAreaDaBase2 =  2*ladoA*ladoB+2*ladoB*ladoC
+
+print('*' *40)
+print('*' *5 + 'Resultados obtidos' + '*' *5 )
+print('Volume: ',round(volume,4) ,'unidades cúbicas')
+print('Tipo de sólido: ' + texto)
+print('Área da base [ABCD]: ',areaDaBase1)
+print('A totalidade das áreas do lado do poligono [ABEH] e [BCEF]: ',TotalAreaDaBase2)
