@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <locale.h>
 #include <ctype.h>
+#include <string.h>
 
 #define MAXIMO_ALUNOS 60
 
@@ -15,7 +16,7 @@ typedef struct
 int ler_numero(int,int numero_alunos);
 int ler_dados_estudante(t_aluno vetor_alunos[],int numero_alunos);
 void mostrar_dados_estudantes(t_aluno vetor_alunos[],int numero_alunos);
-int procurar_estudantes(t_aluno vetor_alunos[],int numero_alunos);
+int procurar_estudante(t_aluno vetor_alunos[],int numero_alunos,int numero_estudante);
 void alterar_nota_estudante(t_aluno vetor_alunos[],int numero_alunos) ;
 float calcular_media_notas(t_aluno vetor_alunos[],int numero_alunos);
 int calcular_nota_maxima(t_aluno vetor_alunos[],int numero_alunos);
@@ -47,17 +48,17 @@ void main(void)
             }
             else
             {
-                total_estudantes = ler_dados_estudante(vetor_estudantes,total_estudantes);
+                total_estudantes += ler_dados_estudante(vetor_estudantes,total_estudantes);
             }
             break;
         case 2:
-           if(total_estudantes == 0)
+            if(total_estudantes == 0)
             {
                 printf("\nNºao foram inseridos alunos");
             }
             else
             {
-                total_estudantes = ler_dados_estudante(vetor_estudantes,total_estudantes);
+                total_estudantes += ler_dados_estudante(vetor_estudantes,total_estudantes);
             }
             getchar();
             break;
@@ -115,7 +116,6 @@ int ler_numero(int min,int max)
     int num;
     do
     {
-        printf("\nIntroduza um número inteiro entre %d e %d: ");
         scanf("%d",&num);
         if(num < min)
         {
@@ -125,13 +125,73 @@ int ler_numero(int min,int max)
         {
             printf("\nO número está acima do valor pretendido");
         }
-    }while(num < min || num > max);
+    }
+    while(num < min || num > max);
 
     return num;
 }
 
 int ler_dados_estudante(t_aluno vetor_alunos[],int numero_alunos)
 {
+    int total_alunos,indice_aluno,numero_aluno;
 
+    printf("\nEstudante Nº%d\n",numero_alunos+1);
+    do
+    {
+        printf("Número de estudante:");
+        numero_aluno = ler_numero(2190000,2199999);
+        indice_aluno = procurar_estudante(vetor_alunos,numero_alunos,numero_aluno);
+        if(indice_aluno == -1)
+        {
+            vetor_alunos[numero_alunos].numero = numero_aluno;
+        }
+        else
+        {
+            printf("\nErro: O aluno já existe!");
+        }
+    }
+    while(indice_aluno !=-1);
 
+    printf("Nome");
+    fflush(stdin);
+    sscanf("%30[^\n]", vetor_alunos[numero_alunos].nome);
+    printf("Introduzir nota final do aluno\n");
+    vetor_alunos[numero_alunos].nota_final = ler_numero(0,20);
+    numero_alunos++;
+    //fgets(vetor_alunos[numero_alunos].nome,31,stdin);
+    return numero_alunos;
+}
+
+int procurar_estudante(t_aluno vetor_alunos[],int numero_alunos,int numero_estudante)
+{
+    int found = -1;
+
+    for(int indice = 0; indice < numero_alunos; indice)
+    {
+        if (vetor_alunos[indice].numero == numero_estudante)
+        {
+            found =  indice;
+        }
+    }
+    return found;
+}
+
+void alterar_nota_estudante(t_aluno vetor_alunos[],int numero_alunos)
+{
+    int numero_aluno,indice_aluno;
+    printf("\nNúmero do aluno para o qual pretende alterar a nota \n");
+    numero_aluno = ler_numero(2190000,219999);
+    indice_aluno = procurar_estudante(vetor_alunos,numero_alunos,numero_aluno);
+    if(indice_aluno == -1)
+    {
+        printf("Erro: O aluno não existe");
+    }
+    else
+    {
+        printf("Nota atual do aluno %d: %d\n",numero_aluno,vetor_alunos[indice_aluno].nota_final);
+        printf("Introduza a nova nota final do aluno\n");
+        vetor_alunos[indice_aluno].nota_final = ler_numero(0,20);
+        printf("\nA nota do aluno %d foi alterada com sucesso.\n",numero_aluno);
+    }
+    getchar();
 }

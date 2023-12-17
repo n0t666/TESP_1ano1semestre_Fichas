@@ -4,3 +4,10 @@
 	<stdlib.h>
 	<locale.h>
 
+1702546280 source:/home/leandro/Documentos/Tesp1_ano/Fundamentos_Programacao/ficha7/ex1/main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	<ctype.h>
+	<string.h>
+
