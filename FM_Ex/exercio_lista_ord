@@ -1,0 +1,20 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Dec 18 13:16:55 2023
+
+@author: leandro
+"""
+
+lista = eval(input('Introduza uma lista'))
+
+menor = lista[0]
+
+for numero in lista:
+    if menor > numero:
+        menor = numero
+        
+lista.sort()
+
+print(lista)
+print("O número menor é: ",menor)
